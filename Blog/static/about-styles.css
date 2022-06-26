@@ -1,0 +1,47 @@
+body {
+    background-image: url(../static/images/library.png);
+}
+.main {
+    margin: 100px 0;
+}
+
+.main-col {
+    font-size: 18px;
+    background-color: #ece9e4;
+    border-radius: 16px;
+    float: left;
+    text-align: left;
+    width: 65%;
+    margin-top: 10px;
+}
+
+.main-col p {
+    padding: 0 36px 36px 36px;
+    text-align: justify;
+}
+
+.main-col h1 {
+    padding-left: 36px;
+}
+
+.main-col .page-title {
+    font-size: 30px;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+aside div {
+    box-shadow: 0 0 10px black;
+    box-sizing: border-box;
+    border: black solid 2px;
+    border-radius: 5px;
+    background-color: #333333;
+    color: white;
+    margin: 0px 10px 40px 10px;
+    padding: 25px;
+}

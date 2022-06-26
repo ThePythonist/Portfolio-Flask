@@ -1,0 +1,27 @@
+{% extends "Layout.html" %}
+
+{% block head %}
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/form-styles.css">
+{% endblock head %}
+
+{% block content %}
+    <section class="login">
+        <form method='POST' action="">
+            {{ form.hidden_tag() }}
+            <p class="message">Sign in to your account</p>
+            {{ form.email() }}
+            {{ form.password() }}
+            {{ form.submit() }}
+                {% if form.errors %}
+                {{ form.errors }}
+                {% endif %}
+            <p class="message">Dont have an account? <a href="Register">Create one</a></p>
+        </form>
+    </section>
+    <script>
+        $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
+{% endblock content %}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/blog-styles.css">
+    <link rel="stylesheet" href="../static/resume-styles.css">
+    <link rel="stylesheet" href="../static/contact-styles.css">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Untitled</title>
+    {% endif %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="brand">
+                <a href="Layout.html">The Pythonist</a>
+            </div>
+
+            <nav>
+                <ul>
+                <li><a href="{{ url_for('Home') }}">Home</a></li>
+                <li><a href="{{ url_for('Blog') }}">Blog</a></li>
+<!--                <li><a href="{{ url_for('Resume') }}">Resume</a></li>-->
+                <li><a href="{{ url_for('About') }}">About</a></li>
+                <li><a href="{{ url_for('Contact') }}">Contact</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('Dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('Logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('Login') }}">Login</a></li>
+                {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category == 'success' %}
+                <div class="success">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="fail">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    <footer>
+
+        <section class="col">
+            <h1>Arash The Pythonist</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, minima, ut? Accusamus beatae, cupiditate deleniti dolores doloribus expedita hic illo iure iusto minus modi molestiae, officiis porro possimus ratione reiciendis?</p>
+        </section>
+
+        <section class="col">
+            <h1>Contact Me</h1>
+            <div class="social-media-bar">
+                <a id="facebook" class="fab fa-facebook social-media-icon" href="https://facebook.com"></a>
+                <a id="instagram" class="fab fa-instagram social-media-icon" href="https://instagram.com"></a>
+                <a id="linkedin" class="fab fa-linkedin social-media-icon" href="https://linkedin.com"></a>
+                <a id="telegram" class="fab fa-telegram-plane social-media-icon" href="https://telegram.org"></a>
+            </div>
+            <div class="phone">
+                <i class='fas fa-phone-alt'></i>
+                <p>09390000000</p>
+                <br>
+                <br>
+                <i class='fas fa-envelope'></i>
+                <p>Awrash.sn@Gmail.com</p>
+            </div>
+        </section>
+
+        <section class="col">
+                <h1>Links</h1>
+                <a href="">Home</a>
+                <a href="">Blog</a>
+<!--                <a href="">My Resume</a>-->
+                <a href="">Contact Me</a>
+        </section>
+
+        <section class="bottom-footer">
+                <p>© 2022 The Pythonist. All rights reserved</p>
+        </section>
+
+        <div class="clearfix"></div>
+    </footer>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script>$('button').click(function(){
+  $('button').toggleClass('active');
+  $('.title').toggleClass('active');
+  $('nav').toggleClass('active');
+});
+</script>
+</body>
+</html>

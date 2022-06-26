@@ -1,0 +1,61 @@
+.login {
+    display: flex;
+    -webkit-display: box;
+    -moz-display: box;
+    -ms-display: flexbox;
+    -webkit-display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 6%;
+    margin: 0;
+    color: white;
+}
+
+form {
+    background-color: #333333;
+    padding: 2% 5% 2% 5%;
+    padding-bottom: 3em;
+    border-radius: 8px;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+form input {
+    color: #384047;
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    border: none;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 1.2em;
+}
+
+form input[type='submit'] {
+    background-color: #4caf50;
+    color: white;
+}
+
+form input[type='submit']:hover {
+    background-color: #29a12e;
+    color: white;
+}
+
+.message {
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.message a {
+    text-decoration: none;
+    color: #69e16d;
+}
+

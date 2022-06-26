@@ -1,0 +1,38 @@
+#blog-bio {
+    background-image: url(../static/images/library.png);
+}
+
+#blog-bio h1 {
+    width: 50%;
+    margin: auto;
+    margin-top: 150px;
+    padding: 30px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.content-area .post {
+    position: relative;
+    float: left;
+    width: 30%;
+    text-align: center;
+    background-color: white;
+    height: auto;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+
+.content-area .post:hover {
+    background-color: #262626;
+    color: white;
+}
+
+.content-area .post-cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.content-area p {
+    padding: 30px;
+    text-align: justify;
+}

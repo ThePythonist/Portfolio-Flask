@@ -1,0 +1,49 @@
+{% extends "Layout.html" %}
+
+{% block head %}
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/form-styles.css">
+{% endblock head %}
+
+{% block content %}
+    <section class="login">
+        <form method='POST' action="">
+            {{ form.hidden_tag() }}
+            <p class="message">Create your account</p>
+            {{ form.username() }}
+            {% for error in form.username.errors %}
+                <div class="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+            {{ form.email() }}
+            {% for error in form.email.errors %}
+                <div class="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+            {{ form.password() }}
+            {% for error in form.password.errors %}
+                <div class="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+            {{ form.confirm_password() }}
+            {% for error in form.confirm_password.errors %}
+                <div class="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+            {{ form.submit() }}
+{#                {% if form.errors %}#}
+{#                {{ form.errors }}#}
+{#                {% endif %}#}
+            <p class="message">Already have an account? <a href="{{ url_for('Login') }}">Login</a></p>
+        </form>
+    </section>
+    <script>
+        $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
+{% endblock content %}

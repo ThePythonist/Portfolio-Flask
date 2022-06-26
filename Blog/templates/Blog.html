@@ -1,0 +1,21 @@
+{% extends "Layout.html" %}
+{% block content %}
+    <section id="blog-bio" class="bio">
+        <div class="container">
+            <h1>Welcome to my blog</h1>
+        </div>
+    </section>
+
+    <section class="content-area">
+        <div class="container">
+            {% for post in posts %}
+                <div class="post">
+                    <img class="post-cover" src={{ post.cover }} alt="">
+                    <h2 id={{ post.id }}> {{ post.title }} </h2>
+                    <p class="post-content">{{ post.content }}</p>
+                    <h3 class="post-author">By {{ post.author }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}

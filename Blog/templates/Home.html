@@ -1,0 +1,45 @@
+{% extends "Layout.html" %}
+{% block content %}
+    <section class="bio">
+        <div class="container">
+            <h1>Hello World, I'm <span class="highlight">Arash</span>.</h1>
+            <p class="desc">I turn caffeine into code :)</p>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h1>Subscribe to my newsletter</h1>
+            <form action="">
+                <input type="email" placeholder="Enter Email">
+                <button type="submit" class="button1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="content-area">
+        <div class="container">
+            <h1>WHAT DID I USE BUILDING THIS WEBSITE?</h1>
+            <div class="tech">
+                <i class='fab fa-html5'></i>
+                <h3>HTML 5</h3>
+                <p>I used HTML 5 as it's markup language.</p>
+            </div>
+            <div class="tech">
+                <i class='fab fa-css3-alt'></i>
+                <h3>CSS 3</h3>
+                <p>I used CSS 3 for describing the presentation of HTML.</p>
+            </div>
+            <div class="tech">
+                <i class='fab fa-python'></i>
+                <h3>PYTHON 3.9</h3>
+                <p>I used Python 3.9 as the back-end development language.</p>
+            </div>
+            <div class="tech">
+                <i class="far fa-window-restore"></i>
+                <h3>FLASK 2.0.3</h3>
+                <p>I used Flask 2.0.3 as the web framework.</p>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
